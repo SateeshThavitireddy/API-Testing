@@ -28,7 +28,6 @@ public class AppTest {
 	 * validatableResponse = response.then(); validatableResponse.statusCode(200);
 	 * validatableResponse.statusLine("HTTP/1.1 200 OK"); }
 	 */
- 
     @Test
     public void verifyStatusCode() {
  
@@ -37,7 +36,7 @@ public class AppTest {
         // Create a request specification
         requestSpecification = RestAssured.given();
  
-        // Calling GET method
+
         response = requestSpecification.get();
  
         // Let's print response body.
