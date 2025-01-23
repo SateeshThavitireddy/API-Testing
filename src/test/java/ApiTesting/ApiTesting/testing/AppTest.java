@@ -43,11 +43,7 @@ public class AppTest {
         // Let's print response body.
         String resString = response.prettyPrint();
         System.out.println("Response Details : " + resString);
- 
-        /*
-         * To perform validation on response, we need to get ValidatableResponse type of
-         * response
-         */
+
         validatableResponse = response.then();
  
         // Get status code
