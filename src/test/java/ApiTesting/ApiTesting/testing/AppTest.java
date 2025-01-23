@@ -28,7 +28,7 @@ public class AppTest {
 	 * validatableResponse = response.then(); validatableResponse.statusCode(200);
 	 * validatableResponse.statusLine("HTTP/1.1 200 OK"); }
 	 */
- 
+
     @Test
     public void verifyStatusCode() {
  
