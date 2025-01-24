@@ -5,7 +5,8 @@
     <classes>
       <class name="ApiTesting.ApiTesting.testing.AppTest">
         <methods>
-          <include name="getRequestUsingBDD"/>
+          <include name="initializeValues"/>
+          <include name="postRequestWithBDD"/>
         </methods>
       </class> <!-- ApiTesting.ApiTesting.testing.AppTest -->
     </classes>

@@ -1,5 +1,6 @@
 package ApiTesting.ApiTesting.testing;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
@@ -9,12 +10,11 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 public class AppTest {
-	
 	RequestSpecification requestSpecification;
-	Response response;
-	ValidatableResponse validatableResponse;
+	ResponseSpecification responseSpecification;
 	
 	/*
 	 * @BeforeTest public void initilzeData() { requestSpecification = with().
@@ -30,7 +30,8 @@ public class AppTest {
 	 */
     @Test
     public void verifyStatusCode() {
- 
+    	Response response;
+    	ValidatableResponse validatableResponse;
         RestAssured.baseURI = "https://reqres.in/api/users?page=2";
  
         // Create a request specification
@@ -64,4 +65,32 @@ public class AppTest {
     	.body("data.first_name",equalTo("Janet"));
     	
     }
+    
+    
+    @BeforeMethod
+    public void initializeValues() {
+    	String json = ""
+    			+ "{\r\n"
+    			+ "    \"name\": \"morpheus\",\r\n"
+    			+ "    \"job\": \"leader\"\r\n"
+    			+ "}"
+    			+ "";
+    	requestSpecification = given().
+    			               baseUri("https://reqres.in/api")
+    			               .header("contentType","application/json")
+    			               .body(json.toString());
+    	responseSpecification =  RestAssured.expect().statusCode(201);
+    }
+    
+    @Test
+    public void postRequestWithBDD() {
+
+    	given().
+    	spec(requestSpecification)
+    	.when()
+    	.post("users")
+    	.then().
+    	spec(responseSpecification);
+    }
+    
 }
