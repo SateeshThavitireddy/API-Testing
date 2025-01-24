@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\satee\AppData\Local\Temp\testng-eclipse--824896510\testng-customsuite.xml</span>
+                    <span>C:\Users\satee\AppData\Local\Temp\testng-eclipse-1298925642\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ApiTesting.ApiTesting.testing.AppTest" class="method navigator-link" hash-for-method="getRequestUsingBDD">getRequestUsingBDD</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ApiTesting.ApiTesting.testing.AppTest" class="method navigator-link" hash-for-method="postRequestWithBDD">postRequestWithBDD</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ApiTesting.ApiTesting.testing.AppTest" class="method navigator-link" hash-for-method="verifyStatusCode">verifyStatusCode</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="ApiTesting.ApiTesting.testing.AppTest" class="method navigator-link" hash-for-method="postRequestWithOutBDD">postRequestWithOutBDD</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -136,23 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="getRequestUsingBDD">
-                  </a> <!-- getRequestUsingBDD -->
-                  <span class="method-name">getRequestUsingBDD</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="postRequestWithBDD">
-                  </a> <!-- postRequestWithBDD -->
-                  <span class="method-name">postRequestWithBDD</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyStatusCode">
-                  </a> <!-- verifyStatusCode -->
-                  <span class="method-name">verifyStatusCode</span>
+                  <a name="postRequestWithOutBDD">
+                  </a> <!-- postRequestWithOutBDD -->
+                  <span class="method-name">postRequestWithOutBDD</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -160,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\satee\AppData\Local\Temp\testng-eclipse--824896510\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\satee\AppData\Local\Temp\testng-eclipse-1298925642\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -169,7 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ApiTesting.ApiTesting.testing.AppTest&quot;/&gt;
+      &lt;class name=&quot;ApiTesting.ApiTesting.testing.AppTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;postRequestWithOutBDD&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- ApiTesting.ApiTesting.testing.AppTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -209,19 +189,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'getRequestUsingBDD')
+data.setCell(0, 1, 'postRequestWithOutBDD')
 data.setCell(0, 2, 'ApiTesting.ApiTesting.testing.AppTest')
-data.setCell(0, 3, 1693);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'postRequestWithBDD')
-data.setCell(1, 2, 'ApiTesting.ApiTesting.testing.AppTest')
-data.setCell(1, 3, 142);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyStatusCode')
-data.setCell(2, 2, 'ApiTesting.ApiTesting.testing.AppTest')
-data.setCell(2, 3, 94);
+data.setCell(0, 3, 1069);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -241,9 +213,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">ApiTesting.ApiTesting.testing.AppTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">getRequestUsingBDD</span>
+                <br/>
+                <span class="ignored-method-name">verifyStatusCode</span>
+                <br/>
+                <span class="ignored-method-name">postRequestWithBDD</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -258,24 +241,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">getRequestUsingBDD</span>
-                <span class="method-start">480 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeValues</span>
-                <span class="method-start">2177 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">postRequestWithBDD</span>
-                <span class="method-start">2179 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">initializeValues</span>
-                <span class="method-start">2323 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyStatusCode</span>
-                <span class="method-start">2324 ms</span>
+                <span class="method-name">postRequestWithOutBDD</span>
+                <span class="method-start">478 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

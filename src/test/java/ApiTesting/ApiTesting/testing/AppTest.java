@@ -7,6 +7,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matcher.*;
 import static org.hamcrest.Matchers.equalTo;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -15,7 +16,8 @@ import io.restassured.specification.ResponseSpecification;
 public class AppTest {
 	RequestSpecification requestSpecification;
 	ResponseSpecification responseSpecification;
-	
+	Response response;
+	ValidatableResponse validatableResponse;
 	/*
 	 * @BeforeTest public void initilzeData() { requestSpecification = with().
 	 * baseUri("http://dummy.restapiexample.com/api/v1/employees"); }
@@ -93,4 +95,27 @@ public class AppTest {
     	spec(responseSpecification);
     }
     
+    
+    @Test
+    public void postRequestWithOutBDD(){
+    	String json = ""
+    			+ "{\r\n"
+    			+ "    \"name\": \"Sateesh\",\r\n"
+    			+ "    \"job\": \"leader\"\r\n"
+    			+ "}"
+    			+ "";
+    	
+    	RestAssured.baseURI ="https://reqres.in/api/users";
+    	requestSpecification = RestAssured.given();
+    	requestSpecification.contentType(ContentType.JSON);
+    	requestSpecification.body(json.toString());
+    	
+    	
+    	response = requestSpecification.post();
+    	String responseString = response.prettyPrint();
+    	validatableResponse = response.then();
+    	validatableResponse.statusCode(201);
+    	validatableResponse.statusLine("HTTP/1.1 201 Created");
+    	
+    }
 }
