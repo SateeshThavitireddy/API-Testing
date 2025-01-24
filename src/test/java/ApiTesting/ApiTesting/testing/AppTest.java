@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matcher.*;
-
+import static org.hamcrest.Matchers.equalTo;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
@@ -51,5 +51,17 @@ public class AppTest {
         // Check status line is as expected
         validatableResponse.statusLine("HTTP/1.1 200 OK");
  
+    }
+    
+    @Test
+    public void getRequestUsingBDD() {
+    	
+    	given()
+    	.when()
+    	.get("https://reqres.in/api/users/2")
+    	.then()
+    	.statusCode(200).statusLine("HTTP/1.1 200 OK")
+    	.body("data.first_name",equalTo("Janet"));
+    	
     }
 }

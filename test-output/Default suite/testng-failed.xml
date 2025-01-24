@@ -5,7 +5,7 @@
     <classes>
       <class name="ApiTesting.ApiTesting.testing.AppTest">
         <methods>
-          <include name="verifyStatusCode"/>
+          <include name="getRequestUsingBDD"/>
         </methods>
       </class> <!-- ApiTesting.ApiTesting.testing.AppTest -->
     </classes>
